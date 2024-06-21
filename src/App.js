@@ -1,25 +1,38 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState, useEffect } from 'react';
+import { BrowserRouter as Router } from 'react-router-dom';
+import MainNavBar from "./main/MainNavBar";
+import ViewerNavBar from './viewer/ViewerNavBar';
+
 
 function App() {
+  const [isViewerLoggedIn, setIsViewerLoggedIn] = useState(false);
+
+  useEffect(() => {
+    const viewerLoggedIn = localStorage.getItem('isViewerLoggedIn') === 'true';
+
+    
+    setIsViewerLoggedIn(viewerLoggedIn);
+  }, []);
+
+  const onViewerLogin = () => {
+    localStorage.setItem('isViewerLoggedIn', 'true');
+    setIsViewerLoggedIn(true);
+  };
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      
+      <Router>
+      {isViewerLoggedIn ? (
+          <ViewerNavBar />
+        ) : (
+      <MainNavBar onViewerLogin={onViewerLogin} />
+    )}
+      </Router>
+      
     </div>
   );
 }
 
 export default App;
+
