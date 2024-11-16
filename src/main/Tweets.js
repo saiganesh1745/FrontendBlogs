@@ -85,7 +85,7 @@ export default function Tweets() {
         <Tweet id="1799335693132730672" />
       </div>
       <div className="tweet-container">
-        <Tweet id="1791443606701785475" />
+        <Tweet id="1799335693132730672" />
       </div>
       <div className="tweet-container">
         <Tweet id="1761749799789859046" />
@@ -97,10 +97,10 @@ export default function Tweets() {
         <Tweet id="1761628341994742241" />
       </div>
       <div className="tweet-container">
-        <Tweet id="1803775319926517824" />
+        <Tweet id="1743961214118473935" />
       </div>
       <div className="tweet-container">
-        <Tweet id="1803780457089339701" />
+        <Tweet id="1811755530890981719" />
       </div>
       <div className="tweet-container">
         <Tweet id="1803779617699848243" />
